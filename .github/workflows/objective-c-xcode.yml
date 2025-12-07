@@ -39,3 +39,4 @@ jobs:
             -scheme "$scheme" \
             -"$filetype_parameter" "$file_to_build" \
           | xcpretty && exit ${PIPESTATUS[0]}
+
