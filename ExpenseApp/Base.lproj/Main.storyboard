@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sv5-fT-RBI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transactions-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TransactionsViewController" customModule="ExpenseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="list.dash" catalog="system" id="xgk-ba-eHa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267" y="840"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4v2-DX-I8y">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sv5-fT-RBI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p20-os-hFr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="heK-nZ-nFR"/>
+                        <segue destination="9Nr-fn-K1N" kind="relationship" relationship="viewControllers" id="uxh-XL-o4Y"/>
+                        <segue destination="p0o-e4-27Y" kind="relationship" relationship="viewControllers" id="Um1-oI-nwE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cMy-5p-wD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="75"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="map-6K-Rbv">
+            <objects>
+                <viewController id="9Nr-fn-K1N" customClass="DashboardViewController" customModule="ExpenseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O15-R7-vF6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HTR-7c-Lyx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="chart.pie.fill" catalog="system" id="ylp-ec-Gtn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tR-Uf-Vbo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="601" y="840"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ES7-J1-x7J">
+            <objects>
+                <viewController title="Settings" id="p0o-e4-27Y" customClass="SettingsViewController" customModule="ExpenseApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pHo-XG-EX6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-C6-akS">
+                                <rect key="frame" x="0.0" y="142.5" width="414" height="670.5"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="92" id="Hot-hL-8o1">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hot-hL-8o1" id="ebG-7F-4Qm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p0o-e4-27Y" id="RMG-WG-Ugz"/>
+                                    <outlet property="delegate" destination="p0o-e4-27Y" id="ddE-jO-N5N"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdb-Mu-0zU">
+                                <rect key="frame" x="14" y="90" width="96.5" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wdb-Mu-0zU" firstAttribute="leading" secondItem="mOa-fk-bYT" secondAttribute="leading" constant="14" id="Cn9-gK-sq6"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="leading" secondItem="mOa-fk-bYT" secondAttribute="leading" id="FhL-am-06i"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="trailing" secondItem="mOa-fk-bYT" secondAttribute="trailing" id="O9J-xI-xix"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="bottom" secondItem="mOa-fk-bYT" secondAttribute="bottom" id="OXy-8x-DDC"/>
+                            <constraint firstItem="wdb-Mu-0zU" firstAttribute="top" secondItem="mOa-fk-bYT" secondAttribute="top" constant="46" id="RKI-xR-m62"/>
+                            <constraint firstItem="mOa-fk-bYT" firstAttribute="bottom" secondItem="N6R-C6-akS" secondAttribute="bottom" id="SK9-0e-M0B"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="leading" secondItem="mOa-fk-bYT" secondAttribute="leading" id="Swk-pd-QCz"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="top" secondItem="wdb-Mu-0zU" secondAttribute="bottom" constant="20" id="aaW-PP-WUC"/>
+                            <constraint firstItem="N6R-C6-akS" firstAttribute="trailing" secondItem="mOa-fk-bYT" secondAttribute="trailing" id="tZA-cg-aQN"/>
+                            <constraint firstItem="mOa-fk-bYT" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wdb-Mu-0zU" secondAttribute="trailing" constant="339" id="zcX-3s-oTf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mOa-fk-bYT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Fuh-fx-v5f"/>
+                    <navigationItem key="navigationItem" id="dtT-mj-BLS"/>
+                    <connections>
+                        <outlet property="settingLbl" destination="wdb-Mu-0zU" id="ZwC-sK-Zo3"/>
+                        <outlet property="tableView" destination="N6R-C6-akS" id="JPD-4F-mLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aP-Bn-nVd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="840"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+    </resources>
+</document>

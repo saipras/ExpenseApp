@@ -18,13 +18,13 @@
 		3246C1392EE5B91D00FB937A /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246C1382EE5B91D00FB937A /* Transactions.swift */; };
 		3254A58E2EE965E700E529AB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254A58C2EE965E600E529AB /* CustomTableViewCell.swift */; };
 		3254A58F2EE965E700E529AB /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */; };
+		3254A59A2EE9A41600E529AB /* AddTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254A5982EE9A41600E529AB /* AddTransactionsViewController.swift */; };
+		3254A59B2EE9A41600E529AB /* AddTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */; };
 		326A1D362EE7FE3600A5D0ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D342EE7FE3600A5D0ED /* SettingsViewController.swift */; };
 		326A1D3B2EE80EA500A5D0ED /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D3A2EE80EA500A5D0ED /* Utility.swift */; };
 		326A1D3E2EE8861900A5D0ED /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D3C2EE8861900A5D0ED /* SettingsTableViewCell.swift */; };
 		326A1D3F2EE8861900A5D0ED /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A1D3D2EE8861900A5D0ED /* SettingsTableViewCell.xib */; };
 		32C5BBF92EE5CB1A00773D86 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5BBF82EE5CB1A00773D86 /* EmptyStateView.swift */; };
-		32C5BC022EE5D7F600773D86 /* AddTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5BC002EE5D7F600773D86 /* AddTransactionsViewController.swift */; };
-		32C5BC032EE5D7F600773D86 /* AddTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C5BC012EE5D7F600773D86 /* AddTransactionsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +41,13 @@
 		3246C1382EE5B91D00FB937A /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		3254A58C2EE965E600E529AB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		3254A5982EE9A41600E529AB /* AddTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionsViewController.swift; sourceTree = "<group>"; };
+		3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionsViewController.xib; sourceTree = "<group>"; };
 		326A1D342EE7FE3600A5D0ED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		326A1D3A2EE80EA500A5D0ED /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		326A1D3C2EE8861900A5D0ED /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		326A1D3D2EE8861900A5D0ED /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		32C5BBF82EE5CB1A00773D86 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
-		32C5BC002EE5D7F600773D86 /* AddTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionsViewController.swift; sourceTree = "<group>"; };
-		32C5BC012EE5D7F600773D86 /* AddTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3246C1212EE57D4F00FB937A /* ViewController.swift */,
-				32C5BC002EE5D7F600773D86 /* AddTransactionsViewController.swift */,
+				3254A5982EE9A41600E529AB /* AddTransactionsViewController.swift */,
 				3246C1312EE5AEF200FB937A /* TransactionsViewController.swift */,
 				326A1D342EE7FE3600A5D0ED /* SettingsViewController.swift */,
 				3246C1332EE5AF1200FB937A /* DashboardViewController.swift */,
@@ -125,11 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				32C5BBF82EE5CB1A00773D86 /* EmptyStateView.swift */,
-				32C5BC012EE5D7F600773D86 /* AddTransactionsViewController.xib */,
 				326A1D3C2EE8861900A5D0ED /* SettingsTableViewCell.swift */,
 				326A1D3D2EE8861900A5D0ED /* SettingsTableViewCell.xib */,
 				3254A58C2EE965E600E529AB /* CustomTableViewCell.swift */,
 				3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */,
+				3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,11 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3246C12A2EE57D5100FB937A /* LaunchScreen.storyboard in Resources */,
-				32C5BC032EE5D7F600773D86 /* AddTransactionsViewController.xib in Resources */,
 				3254A58F2EE965E700E529AB /* CustomTableViewCell.xib in Resources */,
 				3246C1272EE57D5100FB937A /* Assets.xcassets in Resources */,
 				326A1D3F2EE8861900A5D0ED /* SettingsTableViewCell.xib in Resources */,
 				3246C1252EE57D4F00FB937A /* Main.storyboard in Resources */,
+				3254A59B2EE9A41600E529AB /* AddTransactionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +220,8 @@
 				326A1D3B2EE80EA500A5D0ED /* Utility.swift in Sources */,
 				3246C1222EE57D4F00FB937A /* ViewController.swift in Sources */,
 				3246C11E2EE57D4F00FB937A /* AppDelegate.swift in Sources */,
+				3254A59A2EE9A41600E529AB /* AddTransactionsViewController.swift in Sources */,
 				32C5BBF92EE5CB1A00773D86 /* EmptyStateView.swift in Sources */,
-				32C5BC022EE5D7F600773D86 /* AddTransactionsViewController.swift in Sources */,
 				3246C1392EE5B91D00FB937A /* Transactions.swift in Sources */,
 				3254A58E2EE965E700E529AB /* CustomTableViewCell.swift in Sources */,
 				326A1D3E2EE8861900A5D0ED /* SettingsTableViewCell.swift in Sources */,
