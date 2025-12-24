@@ -20,11 +20,14 @@
 		3254A58F2EE965E700E529AB /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */; };
 		3254A59A2EE9A41600E529AB /* AddTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3254A5982EE9A41600E529AB /* AddTransactionsViewController.swift */; };
 		3254A59B2EE9A41600E529AB /* AddTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */; };
+		3260B43E2EFBECD3003A4776 /* TransactionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260B43D2EFBECD3003A4776 /* TransactionStore.swift */; };
 		326A1D362EE7FE3600A5D0ED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D342EE7FE3600A5D0ED /* SettingsViewController.swift */; };
 		326A1D3B2EE80EA500A5D0ED /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D3A2EE80EA500A5D0ED /* Utility.swift */; };
 		326A1D3E2EE8861900A5D0ED /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A1D3C2EE8861900A5D0ED /* SettingsTableViewCell.swift */; };
 		326A1D3F2EE8861900A5D0ED /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326A1D3D2EE8861900A5D0ED /* SettingsTableViewCell.xib */; };
 		32C5BBF92EE5CB1A00773D86 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5BBF82EE5CB1A00773D86 /* EmptyStateView.swift */; };
+		32F494B42EFA7AA6007D6C64 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F494B22EFA7AA6007D6C64 /* TransactionCell.swift */; };
+		32F494B52EFA7AA6007D6C64 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F494B32EFA7AA6007D6C64 /* TransactionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,11 +46,14 @@
 		3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		3254A5982EE9A41600E529AB /* AddTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionsViewController.swift; sourceTree = "<group>"; };
 		3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionsViewController.xib; sourceTree = "<group>"; };
+		3260B43D2EFBECD3003A4776 /* TransactionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStore.swift; sourceTree = "<group>"; };
 		326A1D342EE7FE3600A5D0ED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		326A1D3A2EE80EA500A5D0ED /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		326A1D3C2EE8861900A5D0ED /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		326A1D3D2EE8861900A5D0ED /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		32C5BBF82EE5CB1A00773D86 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		32F494B22EFA7AA6007D6C64 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		32F494B32EFA7AA6007D6C64 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				326A1D3A2EE80EA500A5D0ED /* Utility.swift */,
+				3260B43D2EFBECD3003A4776 /* TransactionStore.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -130,6 +137,8 @@
 				3254A58C2EE965E600E529AB /* CustomTableViewCell.swift */,
 				3254A58D2EE965E700E529AB /* CustomTableViewCell.xib */,
 				3254A5992EE9A41600E529AB /* AddTransactionsViewController.xib */,
+				32F494B22EFA7AA6007D6C64 /* TransactionCell.swift */,
+				32F494B32EFA7AA6007D6C64 /* TransactionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 				326A1D3F2EE8861900A5D0ED /* SettingsTableViewCell.xib in Resources */,
 				3246C1252EE57D4F00FB937A /* Main.storyboard in Resources */,
 				3254A59B2EE9A41600E529AB /* AddTransactionsViewController.xib in Resources */,
+				32F494B52EFA7AA6007D6C64 /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,11 +231,13 @@
 				3246C1222EE57D4F00FB937A /* ViewController.swift in Sources */,
 				3246C11E2EE57D4F00FB937A /* AppDelegate.swift in Sources */,
 				3254A59A2EE9A41600E529AB /* AddTransactionsViewController.swift in Sources */,
+				3260B43E2EFBECD3003A4776 /* TransactionStore.swift in Sources */,
 				32C5BBF92EE5CB1A00773D86 /* EmptyStateView.swift in Sources */,
 				3246C1392EE5B91D00FB937A /* Transactions.swift in Sources */,
 				3254A58E2EE965E700E529AB /* CustomTableViewCell.swift in Sources */,
 				326A1D3E2EE8861900A5D0ED /* SettingsTableViewCell.swift in Sources */,
 				3246C1342EE5AF1200FB937A /* DashboardViewController.swift in Sources */,
+				32F494B42EFA7AA6007D6C64 /* TransactionCell.swift in Sources */,
 				3246C1322EE5AEF200FB937A /* TransactionsViewController.swift in Sources */,
 				3246C1202EE57D4F00FB937A /* SceneDelegate.swift in Sources */,
 				326A1D362EE7FE3600A5D0ED /* SettingsViewController.swift in Sources */,
