@@ -2,76 +2,57 @@
 //  DashboardViewController.swift
 //  ExpenseApp
 //
-//  Created by sai on 07/12/25.
-//  Copyright © 2025 expensetracker. All rights reserved.
-//
 
 import UIKit
 
-class DashboardViewController: UIViewController {
-    @IBOutlet weak var headingLbl: UILabel!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var currentBalanceLbl: UILabel!
-    @IBOutlet weak var balanceLbl: UILabel!
-    @IBOutlet weak var balanceprogressBar: UIProgressView!
-    @IBOutlet weak var seperatorView: UIView!
-    @IBOutlet weak var icomeIcon: UIImageView!
-    @IBOutlet weak var expenseIcon: UIImageView!
-    @IBOutlet weak var incomeLbl: UILabel!
-    @IBOutlet weak var expenseLbl: UILabel!
-    @IBOutlet weak var icomeValue: UILabel!
-    @IBOutlet weak var expenseValue: UILabel!
-    @IBOutlet weak var percentageLbl: UILabel! 
+final class DashboardViewController: UIViewController {
+
+    // MARK: - IBOutlets
+    @IBOutlet private weak var headingLbl: UILabel!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var currentBalanceLbl: UILabel!
+    @IBOutlet private weak var balanceLbl: UILabel!
+    @IBOutlet private weak var percentageLbl: UILabel!
+    @IBOutlet private weak var balanceprogressBar: UIProgressView!
+    @IBOutlet private weak var icomeIcon: UIImageView!
+    @IBOutlet private weak var expenseIcon: UIImageView!
+    @IBOutlet private weak var incomeLbl: UILabel!
+    @IBOutlet private weak var expenseLbl: UILabel!
+    @IBOutlet private weak var icomeValue: UILabel!
+    @IBOutlet private weak var expenseValue: UILabel!
+    @IBOutlet private weak var reportSegmentControl: UISegmentedControl!
+    @IBOutlet private weak var categoryBreakdownLbl: UILabel!
+    @IBOutlet private weak var currencyIcon: UIImageView!
+    @IBOutlet private weak var containerStackView: UIStackView!
+    @IBOutlet private weak var containerScrollView: UIScrollView!
+    @IBOutlet private weak var donutChartView: DonutChartView!
+    
+    // MARK: - Properties
     private let emptyStateView = EmptyStateView()
+    private var transactions: [Transaction] = []
     
-    private var totalIncome: Double {
-        transactions
-            .filter { $0.type == .income }
-            .reduce(0) { $0 + $1.amount }
-    }
 
-    private var totalExpense: Double {
-        transactions
-            .filter { $0.type == .expense }
-            .reduce(0) { $0 + $1.amount }
-    }
 
-    private var balance: Double {
-        totalIncome - totalExpense
-    }
-
-    private var spentPercentage: Float {
-        guard totalIncome > 0 else { return 0 }
-        return Float(totalExpense / totalIncome)
-    }
-
-    
-    private var transactions: [Transaction] {
-        get { TransactionStore.shared.transactions }
-        set {
-            TransactionStore.shared.transactions = newValue
-            updateUIForState()
-        }
-    }
-
-    
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupEmptyStateView()
-        updateUIForState()
-        emptyStateView.setAddButtonTarget(
-            self,
-            action: #selector(openAddTransaction)
-        )
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateUIForState()
+        // Refresh data every time the dashboard appears (MVC Standard)
+        refreshData()
     }
-
     
+    // MARK: - Setup
+    private func setupUI() {
+        view.backgroundColor = .systemBackground
+        setupEmptyStateView()
+        
+        // Setup initial interaction
+        emptyStateView.setAddButtonTarget(self, action: #selector(openAddTransaction))
+    }
     
     private func setupEmptyStateView() {
         emptyStateView.translatesAutoresizingMaskIntoConstraints = false
@@ -84,65 +65,76 @@ class DashboardViewController: UIViewController {
             emptyStateView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -32)
         ])
     }
-    
-    
-   private func updateUIForState() {
+
+    // MARK: - Data Management
+    private func refreshData() {
+        self.transactions = TransactionStore.shared.transactions
+        updateUIState()
+    }
+
+    private func updateUIState() {
         let isEmpty = transactions.isEmpty
-
+        
+        // Toggle visibility with smooth transition
+        UIView.animate(withDuration: 0.3) {
+            self.emptyStateView.alpha = isEmpty ? 1 : 0
+            self.containerScrollView.alpha = isEmpty ? 0 : 1
+        }
+        
         emptyStateView.isHidden = !isEmpty
-        emptyStateView.isUserInteractionEnabled = isEmpty
-
-        headingLbl.isHidden = isEmpty
-        containerView.isHidden = isEmpty
-
+        containerScrollView.isHidden = isEmpty
+        
         guard !isEmpty else { return }
-
         updateDashboardContent()
     }
-    
-    private func updateProgressBar() {
-        let progress = spentPercentage
 
+   private func updateDashboardContent() {
+        let summary = DashboardAnalytics.calculateSummary(from: transactions)
+
+        // 1. Textual Data
+        icomeValue.text = "+₹\(summary.income.formattedWithSeparator)"
+        expenseValue.text = "-₹\(summary.expense.formattedWithSeparator)"
+        balanceLbl.text = "₹\(summary.balance.formattedWithSeparator)"
+
+        // 2. Progress & Percentage
+        let percentInt = Int(summary.spentPercentage * 100)
+        percentageLbl.text = "\(percentInt)% of income spent"
+        updateProgressBar(with: summary.spentPercentage)
+
+        // 3. Chart Data
+        let segments = DashboardAnalytics.getDonutSegments(from: transactions)
+        donutChartView.configure(
+            with: segments,
+            centerText: "₹\(summary.expense.formattedWithSeparator)"
+        )
+    }
+
+    private func updateProgressBar(with progress: Float) {
         balanceprogressBar.setProgress(progress, animated: true)
-
+        
+        // Strategy pattern for color coding
         switch progress {
-        case 0.0..<0.6:
-            balanceprogressBar.progressTintColor = .systemBlue
-        case 0.6..<0.8:
-            balanceprogressBar.progressTintColor = .systemYellow
-        default:
-            balanceprogressBar.progressTintColor = .systemRed
+        case 0.0..<0.6:  balanceprogressBar.progressTintColor = .systemBlue
+        case 0.6..<0.8:  balanceprogressBar.progressTintColor = .systemYellow
+        default:         balanceprogressBar.progressTintColor = .systemRed
         }
     }
 
-    
-    private func updateDashboardContent() {
-
-        
-        icomeValue.text = "+₹\(totalIncome)"
-        expenseValue.text = "-₹\(totalExpense)"
-
-        // 2️⃣ Balance
-        balanceLbl.text = "₹\(balance)"
-       
-
-        // 3️⃣ Progress bar
-        updateProgressBar()
-
-        // 4️⃣ Percentage label
-        let percent = Int(spentPercentage * 100)
-        balanceLbl.text = "₹\(balance)"
-        percentageLbl.text = "\(percent)% of income spent"
-    }
-
-
-    
+    // MARK: - Navigation
     @objc private func openAddTransaction() {
-        let vc = AddTransactionsViewController(
-            nibName: "AddTransactionsViewController",
-            bundle: nil
-        )
-        vc.modalPresentationStyle = .automatic
+        let vc = AddTransactionsViewController(nibName: "AddTransactionsViewController", bundle: nil)
+        // Note: Assign delegate if you want immediate dashboard refresh on add
+        vc.modalPresentationStyle = .pageSheet
         present(vc, animated: true)
+    }
+}
+
+// MARK: - Extensions for Utility
+extension Double {
+    var formattedWithSeparator: String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ","
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
     }
 }
